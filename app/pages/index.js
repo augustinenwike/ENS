@@ -67,6 +67,7 @@ export default function Home() {
     try {
       // Get the provider from web3Modal, which in our case is MetaMask
       // When used for the first time, it prompts the user to connect their wallet
+      await providerOptions;
       await getProviderOrSigner(true);
       setWalletConnected(true);
     } catch (err) {
@@ -95,7 +96,7 @@ export default function Home() {
       // The `current` value is persisted throughout as long as this page is open
       web3ModalRef.current = new Web3Modal({
         network: "rinkeby",
-        providerOptions,
+        providerOptions, //required
         disableInjectedProvider: false,
       });
       connectWallet();
