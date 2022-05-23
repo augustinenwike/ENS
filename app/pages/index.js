@@ -67,7 +67,10 @@ export default function Home() {
     try {
       // Get the provider from web3Modal, which in our case is MetaMask
       // When used for the first time, it prompts the user to connect their wallet
-      await providerOptions;
+       web3ModalRef.current = new Web3Modal({
+         providerOptions, //required
+         disableInjectedProvider: false,
+       });
       await getProviderOrSigner(true);
       setWalletConnected(true);
     } catch (err) {
