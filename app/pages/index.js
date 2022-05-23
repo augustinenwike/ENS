@@ -4,7 +4,6 @@ import Web3Modal from "web3modal";
 import { ethers, providers } from "ethers";
 import { useEffect, useRef, useState } from "react";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-require("dotenv").config({ path: ".env" });
 
 export default function Home() {
   // walletConnected keep track of whether the user's wallet is connected or not
