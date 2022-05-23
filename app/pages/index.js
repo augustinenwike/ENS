@@ -14,7 +14,6 @@ export default function Home() {
   const [ens, setENS] = useState("");
   // Save the address of the currently connected contract
   const [address, setAddress] = useState("");
-  const ALCHEMY_API_KEY_URL = process.env.ALCHEMY_API_KEY_URL;
 
   /**
    * Sets the ENS, if the current connected address has an associated ENS or else it sets
@@ -36,7 +35,7 @@ export default function Home() {
     walletConnect: {
       package: WalletConnectProvider,
       options: {
-        ALCHEMY_API_KEY_URL
+        rpc: {4 : process.env.ALCHEMY_API_KEY_URL}
       },
     },
   };
